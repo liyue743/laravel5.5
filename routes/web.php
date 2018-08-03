@@ -10,10 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+//=================何其威==============================
 //首页路由
 Route::get('/', function () {
     return view('welcome');
 });
+
 
 //后台登录路由
 Route::get('/admin/login','admin\LoginController@login');
@@ -38,3 +40,10 @@ Route::group([],function() {
 	Route::resource('/users','admin\UsersController');
 
 });
+
+//=================张大仙====================
+Route::resource('/admin/orders','Admin\OrdersController'); 	//订单资源路由
+Route::any('/orders/info/{id}','Admin\OrdersinfoController@index'); 	//订单详情路由
+Route::get('/fahuo','Admin\PublicController@fahuo');		//发货AJAX传值	
+
+
