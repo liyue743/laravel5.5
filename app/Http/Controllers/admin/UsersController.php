@@ -1,13 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Model\Admin\Users;
-use App\Model\Admin\Usersinfo;
 use DB;
-
+use Hash;
 
 class UsersController extends Controller
 {
@@ -16,37 +14,13 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $req)
+    public function index()
     {
-         
-        $res = Users::with('info')->orderby('status','id')->where(function($query) use ($req){
-
-            $status = $req->input('status');
-
-            $uname = $req->input('uname');
-
-            if(!empty($uname)){
-
-                $query->where('uname','like','%'.$uname.'%');
-            }
-
-            if($status=='0'){
-
-                $query->where('status',0);
-
-            }
-            if($status=='1'){
-
-                $query->where('status',1);
-            }
-
-
-        })->paginate(10);
-    
-                
-        return view('admin/users/users_list',['res'=>$res,'title'=>'用户展示页']);
+        //
+        $res = DB::table('users')->get();
+        return view('admin.users.index',['title'=>'管理员列表','res'=>$res]);
+       
     }
-    
 
     /**
      * Show the form for creating a new resource.
@@ -55,7 +29,8 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view('admin/users/users_add',['title'=>'创建用户页']);
+        //
+        return view('admin.users.add',['title'=>'管理员添加']);
     }
 
     /**
@@ -64,33 +39,22 @@ class UsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $req)
-    {     
-        //保存用户数据
-        $data = $req->except('_token','repwd');
+    public function store(Request $request)
+    {
+        //接收表单提交的信息
+        $res = $request->except('_token','repass');
 
-        $data['upwd'] = md5($req->get('upwd'));
+        //hash加密
+        $res['password'] = Hash::make($request->input('password'));
 
-        $data['create_at'] = time();          
-                     
-         try{
+        //保存到数据表中
+        $data = DB::table('users')->insert($res);
 
-            //保存数据到主表返回存入的ID
-           $id = DB::table('users')->insertGetId($data);
-
-           //把关联ID存入副表
-           $res = DB::table('users_info')->insert(['users_id'=>$id]);
-
-           if($res){
-
-            return redirect('/users')->with('success','创建用户成功!');
-
-            }
-        }catch(\Exception $e){
-
-            return back();
+        if($data){
+            return redirect('/admins/users');
+        }else{
+            return redirect('/admins/users/create');
         }
-         
     }
 
     /**
@@ -101,10 +65,7 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        //修改页面
-        $res = Users::with('info')->where('id',$id)->first();
-
-        return view('admin/users/users_edit',['res'=>$res,'title'=>'用户编辑页']);
+        //
     }
 
     /**
@@ -113,26 +74,9 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $req,$id)
+    public function edit($id)
     {
-        //修改状态
-        
-        //接收ajax传值       
-            $status = $req->get('status');
-
-        
-            if($status == 1){
-            
-                 $res = Users::where('id',$id)->update(['status'=>0]);
-
-            }elseif($status == 0){
-
-                $res = Users::where('id',$id)->update(['status'=>1]);
-            }
-
-           
-           return $status;
-     
+        //
     }
 
     /**
@@ -142,43 +86,9 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $req, $id)
+    public function update(Request $request, $id)
     {
-        $data = $req->except('_token','_method','uname','utel');
-      
-        //用户头像上传
-        if($req->hasFile('profile')){
-            //修改名字
-            $name =date('Ymd',time()).rand(1111,9999);
-            //获取后缀名
-            $profix = $req->file('profile')->getClientOriginalExtension();
-            //移动
-            $req->file('profile')->move('./uploads/users/',$name.'.'.$profix);
-            
-            $data['profile'] = '/uploads/users/'.$name.'.'.$profix;
-        }
-
-       
-        try{
-        
-            $msg= Users::where('id',$id)->update(['utel'=>$req->input('utel')]);
-
-           $res = Usersinfo::where('users_id',$id)->update($data);
-
-           if($res){
-
-            return redirect('/users')->with('success','修改成功!');
-
-           }else{
-
-            return redirect('/users')->with('success','修改成功!');
-           }
-       
-        }catch (\Exception $e){
-
-            return  back()->with('error','修改失败!');
-        }
-
+        //
     }
 
     /**
@@ -189,25 +99,6 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-
-        try{
-
-            $re = Users::where('id',$id)->delete();
-
-            $res =Usersinfo::where('users_id',$id)->delete();
-            
-            //dd($res);
-
-            if($re && $res){
-
-                return  redirect('/users')->with('success','删除成功!');
-            }
-        }catch(\Exception $e){
-
-                return  back()->with('error','删除失败!');
-        }
-        
-       
+        //
     }
-
 }
