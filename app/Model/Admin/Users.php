@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Users extends Model
 {
+   
     protected $table ='users';
 
     protected $primarykey = 'id';
@@ -14,6 +15,7 @@ class Users extends Model
 
     protected $guarded =[];
 
+    
     public function info()
     {
         return $this->hasOne('App\Model\Admin\Usersinfo','users_id');

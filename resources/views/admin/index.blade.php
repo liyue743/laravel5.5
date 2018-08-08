@@ -2,21 +2,17 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>{{title}}</title>
+	<title>{{$title}}</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/admi/images/favicon.ico" type="image/x-icon"/>
-    <link rel="stylesheet" href="/admi/css/font.css">
-	<link rel="stylesheet" href="/admi/css/xadmin.css">
-    <link rel="stylesheet" href="/admi/css/swiper.min.css">
-    <link rel="stylesheet" href="/admi/css/home.css">
+    <link rel="shortcut icon" href="/houtai/images/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="/houtai/css/font.css">
+	<link rel="stylesheet" href="/houtai/css/xadmin.css">
+    <link rel="stylesheet" href="/houtai/css/swiper.min.css">
 
-    
-    <script type="text/javascript" src="/admi/js/jquery.min.js"></script>
-    <script type="text/javascript" src="/admi/js/swiper.jquery.min.js"></script>
-    <script type="text/javascript" src="/admi/lib/layui/layui.js"></script>
-    <script type="text/javascript" src="/admi/js/xadmin.js"></script>
-    <script type="text/javascript" src="/admi/js/up.js"></script>
-    <script type="text/javascript" src="/admi/lib/layui/lay/modules/form.js"></script>
+    <script type="text/javascript" src="/houtai/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/houtai/js/swiper.jquery.min.js"></script>
+    <script type="text/javascript" src="/houtai/lib/layui/layui.js"></script>
+    <script type="text/javascript" src="/houtai/js/xadmin.js"></script>
  
 </head>
 <body>
@@ -30,7 +26,7 @@
             <dl class="layui-nav-child"> <!-- 二级菜单 -->
               <dd><a href="">个人信息</a></dd>
               <dd><a href="">切换帐号</a></dd>
-              <dd><a href="/admi/login">退出</a></dd>
+              <dd><a href="/houtai/login">退出</a></dd>
             </dl>
           </li>
           <li class="layui-nav-item"><a href="/">前台首页</a></li>
@@ -54,27 +50,9 @@
                         <li>
                             <a href="/users">
                                 <i class="iconfont">&#xe6a7;</i>
-                                用户列表   
+                                用户管理中心
                             </a>
                         </li>   
-                        <li>
-                            <a href="/users/dels">
-                                <i class="iconfont">&#xe6a7;</i>
-                                用户删除
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/users/level">
-                                <i class="iconfont">&#xe6a7;</i>
-                                等级管理
-                            </a>
-                        </li>
-                        <li>
-                            <a href="member-view.html">
-                                <i class="iconfont">&#xe6a7;</i>
-                                浏览记录
-                            </a>
-                        </li>
                     </ul>
                 </li>
                 <li class="list" >
@@ -276,7 +254,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href=//echarts.baidu.com/examples.html">
+                            <a href=//echarts.ba1idu.com/examples.html">
                                 <i class="iconfont">&#xe6a7;</i>
                                 更多案例
                             </a>
@@ -498,17 +476,17 @@
 	 <div class="bg-changer">
             <div class="swiper-container changer-list">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img class="item" src="/admi/images/a.jpg" alt=""></div>
-                    <div class="swiper-slide"><img class="item" src="/admi/images/b.jpg" alt=""></div>
-                    <div class="swiper-slide"><img class="item" src="/admi/images/c.jpg" alt=""></div>
-                    <div class="swiper-slide"><img class="item" src="/admi/images/d.jpg" alt=""></div>
-                    <div class="swiper-slide"><img class="item" src="/admi/images/e.jpg" alt=""></div>
-                    <div class="swiper-slide"><img class="item" src="/admi/images/f.jpg" alt=""></div>
-                    <div class="swiper-slide"><img class="item" src="/admi/images/g.jpg" alt=""></div>
-                    <div class="swiper-slide"><img class="item" src="/admi/images/h.jpg" alt=""></div>
-                    <div class="swiper-slide"><img class="item" src="/admi/images/i.jpg" alt=""></div>
-                    <div class="swiper-slide"><img class="item" src="/admi/images/j.jpg" alt=""></div>
-                    <div class="swiper-slide"><img class="item" src="/admi/images/k.jpg" alt=""></div>
+                    <div class="swiper-slide"><img class="item" src="/houtai/images/a.jpg" alt=""></div>
+                    <div class="swiper-slide"><img class="item" src="/houtai/images/b.jpg" alt=""></div>
+                    <div class="swiper-slide"><img class="item" src="/houtai/images/c.jpg" alt=""></div>
+                    <div class="swiper-slide"><img class="item" src="/houtai/images/d.jpg" alt=""></div>
+                    <div class="swiper-slide"><img class="item" src="/houtai/images/e.jpg" alt=""></div>
+                    <div class="swiper-slide"><img class="item" src="/houtai/images/f.jpg" alt=""></div>
+                    <div class="swiper-slide"><img class="item" src="/houtai/images/g.jpg" alt=""></div>
+                    <div class="swiper-slide"><img class="item" src="/houtai/images/h.jpg" alt=""></div>
+                    <div class="swiper-slide"><img class="item" src="/houtai/images/i.jpg" alt=""></div>
+                    <div class="swiper-slide"><img class="item" src="/houtai/images/j.jpg" alt=""></div>
+                    <div class="swiper-slide"><img class="item" src="/houtai/images/k.jpg" alt=""></div>
                     <div class="swiper-slide"><span class="reset">初始化</span></div>
                 </div>
             </div>
