@@ -93,14 +93,16 @@
                     var ue = UE.getEditor('editor');   
                 </script>
 
-                <div class="">
-                    <label for="L_username" class="layui-form-label">
-                        <span class="x-red">*</span>商品状态
+                <div >
+                    <label class="layui-form-label">
+                        <span>*</span>商品状态
                     </label>
                     <div class="layui-input-inline">
-                        上架<input name="status" type="radio" value="0" checked style="width:900px;">
-                        下架<input name="status" type="radio" value="1" style="width:900px;">
-                        活动中<input name="status" type="radio" value="2" style="width:900px;">
+                        <div class="layui-input-inline">
+                        上架<input type="radio" name="status"  value="0" checked style="width:900px;">
+                        下架<input type="radio" name="status" value="1" style="width:900px;">
+                        活动中<input type="radio" name="status" value="2" style="width:900px;">
+                        </div>
                     </div>
                 </div>
                 
@@ -115,17 +117,7 @@
                 </div>
             </form>
             <!-- 右侧内容框架，更改从这里结束 -->
-            <!-- 开始：判定是否删除已选定的图片 -->
-            <div class="aui-mask aui-works-mask">
-                <div class="aui-mask-content">
-                    <p class="aui-delete-text">确定要删除你上传的资料？</p>
-                    <p class="aui-check-text">
-                        <span class="aui-delete aui-accept-ok">确定</span>
-                        <span class="aui-accept-no">取消</span>
-                    </p>
-                </div>
-            </div>
-            <!-- 结束：判定是否删除已选定的图片 -->
+            
           </div>
 </div>
 

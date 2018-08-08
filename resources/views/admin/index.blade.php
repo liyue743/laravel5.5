@@ -2,18 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-<<<<<<< HEAD
-	<title>{{$title}}</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/houtai/images/favicon.ico" type="image/x-icon"/>
-    <link rel="stylesheet" href="/houtai/css/font.css">
-	<link rel="stylesheet" href="/houtai/css/xadmin.css">
-    <link rel="stylesheet" href="/houtai/css/swiper.min.css">
-=======
+
 	<title>Tbb-Shop后台@yield('title')</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/houtai/images/favicon.ico" type="image/x-icon" />
-
+    <link rel="shortcut icon" href="/houtai/images/favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="/houtai/css/font.css">
 	<link rel="stylesheet" href="/houtai/css/xadmin.css">
     <link rel="stylesheet" href="/houtai/css/swiper.min.css">
@@ -22,24 +14,15 @@
     <script type="text/javascript" src="/houtai/js/swiper.jquery.min.js"></script>
     <script src="/houtai/lib/layui/layui.js" charset="utf-8"></script>
     <script type="text/javascript" src="/houtai/js/xadmin.js"></script>
-    <!-- 文件上传 -->
-    <link rel="stylesheet" href="/houtai/css/home.css">
->>>>>>> origin/huanghuan3547
-
-    <script type="text/javascript" src="/houtai/js/jquery.min.js"></script>
-    <script type="text/javascript" src="/houtai/js/swiper.jquery.min.js"></script>
-    <script type="text/javascript" src="/houtai/lib/layui/layui.js"></script>
-    <script type="text/javascript" src="/houtai/js/xadmin.js"></script>
- 
 </head>
 <body>
     <!-- 顶部开始 -->
     <div class="container">
-<<<<<<< HEAD
+
         <div class="logo"><a href="/admin/index">Tbb 后台管理平台 V1.0</a></div>
-=======
-        <div class="logo"><a href="/index.html">淘宝宝 V1.1</a></div>
->>>>>>> origin/huanghuan3547
+
+        
+
         <div class="open-nav"><i class="iconfont">&#xe699;</i></div>
         <ul class="layui-nav right" lay-filter="">
           <li class="layui-nav-item">
@@ -61,7 +44,7 @@
         <div class="left-nav">
           <div id="side-nav">
             <ul id="nav">
-<<<<<<< HEAD
+
                 <li class="list">
                     <a href="javascript:;">
                         <i class="iconfont">&#xe70b;</i>
@@ -96,16 +79,9 @@
                                 等级管理
                             </a>
                         </li>
-                        <li>
-                            <a href="/banner-list.html">
-                                <i class="iconfont">&#xe6a7;</i>
-                                轮播列表
-                            </a>
-                        </li>
                     </ul>
                 </li>
-=======
->>>>>>> origin/huanghuan3547
+
                 <li class="list" >
                     <a href="javascript:;">
                         <i class="iconfont">&#xe6a3;</i>
@@ -133,7 +109,31 @@
                 <li class="list" >
                     <a href="javascript:;">
                         <i class="iconfont">&#xe6a3;</i>
-<<<<<<< HEAD
+                        商品管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="/goods/create">
+                                <i class="iconfont">&#xe6a7;</i>
+                                商品添加
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="/goods">
+                                <i class="iconfont">&#xe6a7;</i>
+                                商品展示
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="list" >
+                    <a href="javascript:;">
+                        <i class="iconfont">&#xe6a3;</i>
+
                         系统统计
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
@@ -178,32 +178,6 @@
                             <a href=//echarts.ba1idu.com/examples.html">
                                 <i class="iconfont">&#xe6a7;</i>
                                 更多案例
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="list" >
-                    <a href="javascript:;">
-                        <i class="iconfont">&#xe6a3;</i>
-                        轮播管理
-=======
-                        商品管理
->>>>>>> origin/huanghuan3547
-                        <i class="iconfont nav_right">&#xe697;</i>
-                    </a>
-                    <ul class="sub-menu">
-                        <li>
-                            <a href="/goods/create">
-                                <i class="iconfont">&#xe6a7;</i>
-                                商品添加
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="sub-menu">
-                        <li>
-                            <a href="/goods">
-                                <i class="iconfont">&#xe6a7;</i>
-                                商品展示
                             </a>
                         </li>
                     </ul>

@@ -15,19 +15,19 @@ Route::get('/', function () {
     return view('home/index');
 });
 
+/*************huanghuan   luyou******************/	
 Route::group([],function(){
 	Route::get('/admin','admin\AdminController@index');//后台的首页
 	Route::get('/admin/{id}/status','admin\AdminController@status');//商品上架下架
 
-<<<<<<< HEAD
-//后台登录路由
-Route::get('/admin/login','admin\LoginController@login');
-
-//后台主页路由
-Route::get('/admin/index',function() {
-	return view('admin/index',['title'=>'TBB项目后台']);
+	Route::resource('/cate','admin\CateController');//商品类别的整体增删改查
+	Route::resource('/goods','admin\GoodsController');//商品整体的增删改查
 });
+/*************huanghuan   luyou******************/
 
+
+
+/*****************何其威——用户**********************/
 //用户管理理由组
 Route::group([],function() {
 	//用户停用站
@@ -44,25 +44,23 @@ Route::group([],function() {
 	Route::post('/users/dopass/{id}','admin\UsersinfoController@dopass');
 	//用户资源路由
 	Route::resource('/users','admin\UsersController');
-
 });
+/***********何其威——用户相关服辅助功能路由*************/
+Route::any('/checkuname','admin\AjaxController@checkuname');
+Route::any('/users/dels','admin\AjaxController@delusers');
+Route::any('/users/show/{id}','admin\UsersinfoController@show');
+/***********何其威——用户相关服辅助功能路由*************/
 
 
-//=================张大仙====================
-Route::resource('/admin/orders','Admin\OrdersController'); 	//订单资源路由
+
+
+//=================张大仙====================//
+Route::resource('/admin/orders','Admin\OrdersController');//订单资源路由	
 Route::any('/orders/info/{id}','Admin\OrdersinfoController@index'); 	//订单详情路由
 Route::get('/fahuo','Admin\PublicController@fahuo');		//发货AJAX传值	
+//=================张大仙====================//
 
 
 
-Route::any('/checkuname','admin\AjaxController@checkuname');
 
-Route::any('/users/dels','admin\AjaxController@delusers');
 
-Route::any('/users/show/{id}','admin\UsersinfoController@show');
-=======
-	
-	Route::resource('/cate','admin\CateController');//商品类别的整体增删改查
-	Route::resource('/goods','admin\GoodsController');//商品整体的增删改查
-});
->>>>>>> origin/huanghuan3547

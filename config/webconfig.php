@@ -1,15 +1,9 @@
 <?php
 
-
-return[
-
-	'uploads'=>'./uploads/'
-];
-
 	
 	return [
 
-		'upload'=>'./uploads/',
+		'uploads'=>'./uploads/',
 		'goodsimg'=>'./uploads/goodsimg'
 	];
 
