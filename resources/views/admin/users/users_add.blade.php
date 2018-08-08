@@ -27,7 +27,7 @@
                         <span class="x-red">*手机号</span>
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" id="L_phone" name="utel" required=""   class="layui-input">
+                        <input type="text" id="L_phone" name="utel" required="" class="layui-input">
                     </div>
                     <div class="layui-form-mid layui-word-aux">
 
