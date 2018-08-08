@@ -61,7 +61,7 @@
                         邮箱
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" id="L_email" name="email" autocomplete="on" value="{{$res['info']->email}}" class="layui-input">
+                        <input type="text" id="L_email" name="email" autocomplete="on" value="{{ $res['info']->email }}" class="layui-input">
                     </div>
                     <div class="layui-form-mid layui-word-aux">
                         如果您在邮箱已激活的情况下，变更了邮箱，需
@@ -77,7 +77,7 @@
                         地址
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" id="L_city" name="addr" autocomplete="off" value=""
+                        <input type="text" id="L_city" name="addr" autocomplete="off" value="{{$res['info']->addr}}"
                         class="layui-input">
                     </div>
                 </div>
@@ -97,8 +97,7 @@
                     <label for="L_sign" class="layui-form-label">
                     </label>
                     <button class="layui-btn" key="set-mine" lay-filter="save" lay-submit>
-                  
-                        
+                                          
                         保存
                     
                     </button>

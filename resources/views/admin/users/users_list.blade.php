@@ -69,6 +69,9 @@ layui.use('layer', function(){
                         </th>
                         <th>
                             用户名
+                        </th> 
+                        <th>
+                            昵称
                         </th>
                         <th>
                             性别
@@ -103,9 +106,12 @@ layui.use('layer', function(){
                             {{ $v->id }}
                         </td>
                         <td>
-                            <u style="cursor:pointer" onclick="member_show('','member-show.html','10001','360','400')">
+                            <u style="cursor:pointer" onclick="member_show('{{$v->uname}}','/users/show/{{$v->id}}','','600','500')">
                                 {{$v->uname}}
                             </u>
+                        </td>
+                        <td>
+                            {{$v['info']->nickname}}
                         </td>
                         <td >
 

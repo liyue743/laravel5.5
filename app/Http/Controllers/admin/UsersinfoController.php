@@ -42,4 +42,11 @@ class UsersinfoController extends Controller
     	
     	
     }
+
+    public function show($id)
+    {
+        $res = Users::with('info')->where('id',$id)->first();
+
+        return view('/admin.users.users_show',['res'=>$res]);
+    }
 }

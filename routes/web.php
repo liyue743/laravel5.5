@@ -44,3 +44,5 @@ Route::group([],function() {
 Route::any('/checkuname','admin\AjaxController@checkuname');
 
 Route::any('/users/dels','admin\AjaxController@delusers');
+
+Route::any('/users/show/{id}','admin\UsersinfoController@show');
