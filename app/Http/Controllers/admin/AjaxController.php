@@ -35,16 +35,8 @@ class AjaxController extends Controller
 
         //删除副表信息
             if($re){
-
-            	$res =[];
-
-	    		foreach($ids as $v) {
-	    			
-	    		 $res[] = Usersinfo::where('users_id',$v)->delete();
-	    		 
-	    
-	    		}
-
+ 			
+	    		 $res = Usersinfo::whereIn('users_id',$ids)->delete();	    		 
            }
 
             return $res;

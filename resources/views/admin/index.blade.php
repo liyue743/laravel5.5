@@ -13,7 +13,6 @@
     <script type="text/javascript" src="/houtai/js/swiper.jquery.min.js"></script>
     <script type="text/javascript" src="/houtai/lib/layui/layui.js"></script>
     <script type="text/javascript" src="/houtai/js/xadmin.js"></script>
- 
 </head>
 <body>
     <!-- 顶部开始 -->
@@ -161,7 +160,7 @@
                     </a>
                     <ul class="sub-menu">
                         <li>
-                            <a href="">
+                            <a href="/commonts">                            
                                 <i class="iconfont">&#xe6a7;</i>
                                 评论列表   
                             </a>

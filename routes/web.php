@@ -35,14 +35,27 @@ Route::group([],function() {
 	});
 	//修改密码页
 	Route::get('/users/pass/{id}','admin\UsersinfoController@pass');
+	//ajax验证用户名
+	Route::any('/checkuname','admin\AjaxController@checkuname');
 	//验证密码
 	Route::post('/users/dopass/{id}','admin\UsersinfoController@dopass');
+	//用户个人信息
+	Route::any('/users/show/{id}','admin\UsersinfoController@show');
+	//Ajax批量删除
+	Route::any('/users/dels','admin\AjaxController@delusers');
 	//用户资源路由
 	Route::resource('/users','admin\UsersController');
 
 });
-Route::any('/checkuname','admin\AjaxController@checkuname');
+Route::group([],function() {
+	//商品评论资源路由
+	Route::resource('/commonts','admin\CommontsController');
+	
 
-Route::any('/users/dels','admin\AjaxController@delusers');
+});
 
-Route::any('/users/show/{id}','admin\UsersinfoController@show');
+
+
+
+
+
