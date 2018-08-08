@@ -10,13 +10,16 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-//=================何其威==============================
-//首页路由
+
 Route::get('/', function () {
     return view('home/index');
 });
 
+Route::group([],function(){
+	Route::get('/admin','admin\AdminController@index');//后台的首页
+	Route::get('/admin/{id}/status','admin\AdminController@status');//商品上架下架
 
+<<<<<<< HEAD
 //后台登录路由
 Route::get('/admin/login','admin\LoginController@login');
 
@@ -57,3 +60,9 @@ Route::any('/checkuname','admin\AjaxController@checkuname');
 Route::any('/users/dels','admin\AjaxController@delusers');
 
 Route::any('/users/show/{id}','admin\UsersinfoController@show');
+=======
+	
+	Route::resource('/cate','admin\CateController');//商品类别的整体增删改查
+	Route::resource('/goods','admin\GoodsController');//商品整体的增删改查
+});
+>>>>>>> origin/huanghuan3547
