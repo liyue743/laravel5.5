@@ -12,6 +12,9 @@
                         头像
                     </label>
                     <div class="layui-input-inline">
+
+                        <img src="{{$res['info']->profile}}" width="100px">
+
                         <input type="file" name="profile" >
                     </div>
                 </div>
@@ -58,8 +61,7 @@
                         邮箱
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" id="L_email" name="email" required lay-verify="email"
-                        autocomplete="off" value="{{$res['info']->email}}" class="layui-input">
+                        <input type="text" id="L_email" name="email" autocomplete="on" value="{{$res['info']->email}}" class="layui-input">
                     </div>
                     <div class="layui-form-mid layui-word-aux">
                         如果您在邮箱已激活的情况下，变更了邮箱，需
@@ -84,7 +86,7 @@
                         签名
                     </label>
                     <div class="layui-input-block">
-                        <textarea placeholder="随便写些什么刷下存在感" id="L_sign" disabled name="sign" autocomplete="off"
+                        <textarea placeholder="用户签名" id="L_sign" disabled name="sign" autocomplete="off"
                         class="layui-textarea" style="height: 80px;"></textarea>
                     </div>
                 </div>

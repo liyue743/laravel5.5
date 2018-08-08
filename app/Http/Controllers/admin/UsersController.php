@@ -18,23 +18,35 @@ class UsersController extends Controller
      */
     public function index(Request $req)
     {
-        $condition = [];
- 
-        if(!empty($req->get('uname'))){
- 
-        $condition[] = ['uname','like','%'.$req->get('uname').'%'];
-
-        }
-        if(!empty($req->get('sex'))){
- 
-        $condition[] = ['sex','=',$req->get('sex')];
-
-        }
          
-        $res = Users::with('info')->where($condition)->paginate(10);       
-      
+        $res = Users::with('info')->orderby('status','id')->where(function($query) use ($req){
+
+            $status = $req->input('status');
+
+            $uname = $req->input('uname');
+
+            if(!empty($uname)){
+
+                $query->where('uname','like','%'.$uname.'%');
+            }
+
+            if($status=='0'){
+
+                $query->where('status',0);
+
+            }
+            if($status=='1'){
+
+                $query->where('status',1);
+            }
+
+
+        })->paginate(10);
+    
+                
         return view('admin/users/users_list',['res'=>$res,'title'=>'用户展示页']);
     }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -43,7 +55,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view('admin/users/users_add','title'=>'创建用户页');
+        return view('admin/users/users_add',['title'=>'创建用户页']);
     }
 
     /**
@@ -53,7 +65,7 @@ class UsersController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $req)
-    {
+    {     
         //保存用户数据
         $data = $req->except('_token','repwd');
 
@@ -63,14 +75,15 @@ class UsersController extends Controller
                      
          try{
 
+            //保存数据到主表返回存入的ID
            $id = DB::table('users')->insertGetId($data);
 
-
+           //把关联ID存入副表
            $res = DB::table('users_info')->insert(['users_id'=>$id]);
 
            if($res){
 
-            return redirect('/users');
+            return redirect('/users')->with('success','创建用户成功!');
 
             }
         }catch(\Exception $e){
@@ -103,8 +116,8 @@ class UsersController extends Controller
     public function edit(Request $req,$id)
     {
         //修改状态
-             
-        //接收ajax传值
+        
+        //接收ajax传值       
             $status = $req->get('status');
 
         
@@ -118,7 +131,7 @@ class UsersController extends Controller
             }
 
            
-            return $res;
+           return $status;
      
     }
 
@@ -140,7 +153,7 @@ class UsersController extends Controller
             //获取后缀名
             $profix = $req->file('profile')->getClientOriginalExtension();
             //移动
-            $req->file('profile')->move('/uploads/users/',$name.'.'.$profix);
+            $req->file('profile')->move('./uploads/users/',$name.'.'.$profix);
             
             $data['profile'] = '/uploads/users/'.$name.'.'.$profix;
         }
@@ -158,7 +171,7 @@ class UsersController extends Controller
 
            }else{
 
-            return redirect('/users')->with('success',;'修改成功!');
+            return redirect('/users')->with('success','修改成功!');
            }
        
         }catch (\Exception $e){
@@ -179,9 +192,14 @@ class UsersController extends Controller
 
         try{
 
-            $res = Users::with('info')->where('id',$id)->delete();
+            $re = Users::where('id',$id)->delete();
 
-            if($res){
+            $res =Usersinfo::where('users_id',$id)->delete();
+            
+            //dd($res);
+
+            if($re && $res){
+
                 return  redirect('/users')->with('success','删除成功!');
             }
         }catch(\Exception $e){

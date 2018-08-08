@@ -25,7 +25,6 @@ Route::get('/admin/index',function() {
 
 //用户管理理由组
 Route::group([],function() {
-
 	//用户停用站
 	Route::get('/users/dels',function() {
 		return view('admin/users/users_dels');
@@ -34,8 +33,14 @@ Route::group([],function() {
 	Route::get('/users/level',function() {
 		return view('admin/users/users_level');
 	});
-	
+	//修改密码页
+	Route::get('/users/pass/{id}','admin\UsersinfoController@pass');
+	//验证密码
+	Route::post('/users/dopass/{id}','admin\UsersinfoController@dopass');
 	//用户资源路由
 	Route::resource('/users','admin\UsersController');
 
 });
+Route::any('/checkuname','admin\AjaxController@checkuname');
+
+Route::any('/users/dels','admin\AjaxController@delusers');
