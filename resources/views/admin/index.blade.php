@@ -2,24 +2,27 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Tbb项目后台</title>
+	<title>{{title}}</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/admi/images/favicon.ico" type="image/x-icon"/>
-
     <link rel="stylesheet" href="/admi/css/font.css">
 	<link rel="stylesheet" href="/admi/css/xadmin.css">
     <link rel="stylesheet" href="/admi/css/swiper.min.css">
+    <link rel="stylesheet" href="/admi/css/home.css">
 
+    
     <script type="text/javascript" src="/admi/js/jquery.min.js"></script>
     <script type="text/javascript" src="/admi/js/swiper.jquery.min.js"></script>
-    <script src="/admi/lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/admi/lib/layui/layui.js"></script>
     <script type="text/javascript" src="/admi/js/xadmin.js"></script>
-
+    <script type="text/javascript" src="/admi/js/up.js"></script>
+    <script type="text/javascript" src="/admi/lib/layui/lay/modules/form.js"></script>
+ 
 </head>
 <body>
     <!-- 顶部开始 -->
     <div class="container">
-        <div class="logo"><a href="/admin/index">淘宝宝 V1.1</a></div>
+        <div class="logo"><a href="/admin/index">Tbb 后台管理平台 V1.0</a></div>
         <div class="open-nav"><i class="iconfont">&#xe699;</i></div>
         <ul class="layui-nav right" lay-filter="">
           <li class="layui-nav-item">
@@ -495,7 +498,7 @@
 	 <div class="bg-changer">
             <div class="swiper-container changer-list">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img class="item" src=/admi/images/a.jpg" alt=""></div>
+                    <div class="swiper-slide"><img class="item" src="/admi/images/a.jpg" alt=""></div>
                     <div class="swiper-slide"><img class="item" src="/admi/images/b.jpg" alt=""></div>
                     <div class="swiper-slide"><img class="item" src="/admi/images/c.jpg" alt=""></div>
                     <div class="swiper-slide"><img class="item" src="/admi/images/d.jpg" alt=""></div>
