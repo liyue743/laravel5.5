@@ -10,40 +10,16 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-//=================何其威==============================
-//首页路由
+
 Route::get('/', function () {
     return view('welcome');
 });
 
+Route::group([],function(){
+	Route::get('/admin','admin\AdminController@index');//后台的首页
+	Route::get('/admin/{id}/status','admin\AdminController@status');//商品上架下架
 
-//后台登录路由
-Route::get('/admin/login','admin\LoginController@login');
-
-//后台主页路由
-Route::get('/admin/index',function() {
-	return view('admin/index');
+	
+	Route::resource('/cate','admin\CateController');//商品类别的整体增删改查
+	Route::resource('/goods','admin\GoodsController');//商品整体的增删改查
 });
-
-//用户管理理由组
-Route::group([],function() {
-
-	//用户回收站
-	Route::get('/users/dels',function() {
-		return view('admin/users/users_dels');
-	});
-	//用户等级路由
-	Route::get('/users/level',function() {
-		return view('admin/users/users_level');
-	});
-	//用户资源路由
-	Route::resource('/users','admin\UsersController');
-
-});
-
-//=================张大仙====================
-Route::resource('/admin/orders','Admin\OrdersController'); 	//订单资源路由
-Route::any('/orders/info/{id}','Admin\OrdersinfoController@index'); 	//订单详情路由
-Route::get('/fahuo','Admin\PublicController@fahuo');		//发货AJAX传值	
-
-
