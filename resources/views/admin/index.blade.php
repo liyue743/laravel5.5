@@ -152,24 +152,11 @@
                     </a>
                     <ul class="sub-menu">
                         <li>
-                            <a href="">
+                            <a href="/admin/orders">
                                 <i class="iconfont">&#xe6a7;</i>
                                 订单列表   
                             </a>
                         </li>   
-                      
-                        <li>
-                            <a href="">
-                                <i class="iconfont">&#xe6a7;</i>
-                                订单XX
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <i class="iconfont">&#xe6a7;</i>
-                                
-                            </a>
-                        </li>
                     </ul>
                 </li>           
                 <li class="list">
