@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Second project named Shop of <br/><strong>TBB</strong>
                 </div>
 
                 <div class="links">

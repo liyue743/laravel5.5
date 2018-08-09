@@ -14,6 +14,7 @@ class CommontsController extends Controller
      */
     public function index()
     {
+            
         return view('admin.commonts.coms_list',['title'=>'评论管理列表']);
     }
 

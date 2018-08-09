@@ -29,9 +29,7 @@
                     <div class="layui-input-inline">
                         <input type="text" id="L_phone" name="utel" required=""   class="layui-input">
                     </div>
-                    <div class="layui-form-mid layui-word-aux">
-
-                    </div>      
+   
                 </div>
              
                 <div class="layui-form-item">
