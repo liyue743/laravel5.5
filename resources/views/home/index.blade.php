@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html >
 <html>
 
     <head>
@@ -7,6 +7,7 @@
 
         <title>首页</title>
 
+<<<<<<< HEAD
         <link href="/home/css/amazeui.css" rel="stylesheet" type="text/css" />
         <link href="/home/css/admin.css" rel="stylesheet" type="text/css" />
 
@@ -16,6 +17,17 @@
         <link href="/home/css/css/skin.css" rel="stylesheet" type="text/css" />
         <script src="/home/assets/js/jquery.min.js"></script>
         <script src="/home/assets/js/amazeui.min.js"></script>
+=======
+        <link href="/home/AmazeUI/assets/css/amazeui.css" rel="stylesheet" type="text/css" />
+        <link href="/home/AmazeUI/assets/css/admin.css" rel="stylesheet" type="text/css" />
+
+        <link href="/home/basic/css/demo.css" rel="stylesheet" type="text/css" />
+
+        <link href="/home/css/hmstyle.css" rel="stylesheet" type="text/css"/>
+        <link href="/home/css/skin.css" rel="stylesheet" type="text/css" />
+        <script src="/home/AmazeUI/assets/js/jquery.min.js"></script>
+        <script src="/home/AmazeUI/assets/js/amazeui.min.js"></script>
+>>>>>>> origin/hqw
 
     </head>
 
@@ -33,10 +45,17 @@
                 </ul>
                 <ul class="message-r">
                     <div class="topMessage home">
+<<<<<<< HEAD
                         <div class="menu-hd"><a href="#" target="_top" class="h">商城首页</a></div>
                     </div>
                     <div class="topMessage my-shangcheng">
                         <div class="menu-hd MyShangcheng"><a href="#" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
+=======
+                        <div class="menu-hd"><a href="www.tbb.com" target="_top" class="h">商城首页</a></div>
+                    </div>
+                    <div class="topMessage my-shangcheng">
+                        <div class="menu-hd MyShangcheng"><a href="/myself" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
+>>>>>>> origin/hqw
                     </div>
                     <div class="topMessage mini-cart">
                         <div class="menu-hd"><a id="mc-menu-hd" href="#" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
@@ -752,7 +771,11 @@
                     <!--今日推荐 -->
 
                     <div class="am-g am-g-fixed recommendation">
+<<<<<<< HEAD
                         <div class="clock am-u-sm-3" >
+=======
+                        <div class="clock am-u-sm-3" ">
+>>>>>>> origin/hqw
                             <img src="/home/images/2016.png "></img>
                             <p>今日<br>推荐</p>
                         </div>
@@ -2340,7 +2363,11 @@
             </div>
         </div>
         <script>
+<<<<<<< HEAD
             window.jQuery || document.write('<script src="/home/basic/js/jquery.min.js "><\/script>');
+=======
+            window.jQuery || document.write('<script src="basic/js/jquery.min.js "><\/script>');
+>>>>>>> origin/hqw
         </script>
         <script type="text/javascript " src="/home/basic/js/quick_links.js "></script>
     </body>
